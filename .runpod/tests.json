@@ -1,32 +1,23 @@
 {
   "tests": [
     {
-      "name": "validation_text_input",
+      "name": "basic_test",
       "input": {
-        "text": "Hello world",
-        "language": "en"
+        "model": "BAAI/bge-small-en-v1.5",
+        "input": "Hello, world!"
       },
       "timeout": 10000
     }
   ],
   "config": {
-    "gpuTypeId": "NVIDIA GeForce RTX 4090",
+    "gpuTypeId": "NVIDIA RTX A5000",
     "gpuCount": 1,
+    "allowedCudaVersions": ["12.7", "12.6", "12.5", "12.4"],
     "env": [
       {
-        "key": "ENV_KEY_HERE",
-        "value": "ENV_VALUE_HERE"
+        "key": "MODEL_NAMES",
+        "value": "BAAI/bge-small-en-v1.5"
       }
-    ],
-    "allowedCudaVersions": [
-      "12.7",
-      "12.6",
-      "12.5",
-      "12.4",
-      "12.3",
-      "12.2",
-      "12.1",
-      "12.0"
     ]
   }
 }
